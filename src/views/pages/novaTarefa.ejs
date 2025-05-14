@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova tarefa</title>
+    <!-- <link rel="stylesheet" href="/public/css/styles.css"> -->
+  </head>
+  <style>
+     *{
+      box-sizing: border-box;
+    }
+    body{
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    h2{
+      font-size: 1.80em;
+      color: #3173f6;
+      text-align: center;
+      margin-bottom:2em;
+    }
+    .div-nova-tarefa{
+      background: #f6f6f6;
+      display: grid;
+      width:360px;
+      height:495px;
+      border-radius:15px;
+      padding:1em;
+      justify-items: center;
+      margin: auto;/*centraliza a div*/
+      margin-top:5em;
+    }
+    form{
+      display: grid;
+      width:250px;
+    }
+    input,textarea,button,select{
+      padding: 1em;
+      margin:0.80em;
+      border-radius:15px;
+      border: none;
+    }
+    input::placeholder,
+    textarea::placeholder{
+      color: #9ebaf3;
+    }
+    button{  
+      background: #3173f6;
+      color: aliceblue;
+    }
+    button:hover{
+      background: #4780f3;
+    }
+    a{
+      text-decoration: none;
+      color: #4780f3;
+    }
+    a:hover{
+      color: #759ff5;
+    }
+  </style>
+<body>
+<div class="div-nova-tarefa">
+      <h2>Nova Tarefa</h2>
+  <form action="/nova-tarefa" method="POST">
+    <input type="text" name="titulo" placeholder="Título" required />
+    <textarea name="descricao" placeholder="Descrição"></textarea>
+    <input type="date" name="prazo" required />
+
+    <select name="prioridade" required>
+      <option value="baixa">Baixa</option>
+      <option value="media">Média</option>
+      <option value="alta">Alta</option>
+    </select>
+
+    <button type="submit">Criar Tarefa</button>
+  </form>
+
+  <a href="/dashboard">↩︎ Voltar</a>
+</div>
+</body>
+</html>

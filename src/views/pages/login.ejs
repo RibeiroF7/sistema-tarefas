@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- <link rel="stylesheet" href="/public/css/styles.css"> -->
+  </head>
+  <style>
+    *{
+      box-sizing: border-box;
+    }
+    body{
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    h2{
+      color: #3173f6;
+    }
+    .div-login{
+      background: #f6f6f6;
+      display: grid;
+      width:330px;
+      height:360px;
+      border-radius:15px;
+      padding:1em;
+      justify-items: center;
+      margin: auto;/*centraliza a div*/
+      margin-top:5em;
+    }
+    form{
+      display: grid;
+      width:250px;
+    }
+    input,button{
+      padding: 1em;
+      margin:0.80em;
+      border-radius:15px;
+      border: none;
+    }
+    input::placeholder{
+      color: #9ebaf3;
+    }
+    button{
+      background: #3173f6;
+      color: aliceblue;
+    }
+    button:hover{
+      background: #4780f3;
+    }
+    p{
+      color: #165ce9;
+      font-size:15px;
+    }
+    a{
+      text-decoration: none;
+      color: #4780f3;
+    }
+    a:hover{
+      color: #759ff5;
+    }
+  </style>
+<body>
+  <div class="div-login">
+    <h2>Login</h2>
+    <form action="/login" method="POST" >
+      <input type="email" name="email" placeholder="Digite seu email" required />
+      <input type="password" name="senha" placeholder="Digite sua senha" required />
+      <button type="submit">Entrar</button>
+    </form>
+    <p>Não tem uma conta?</p>
+    <a href="/register">Cadastre-se</a>
+  </div>
+</body>
+</html>

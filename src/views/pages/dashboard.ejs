@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- <link rel="stylesheet" href="/public/css/styles.css"> -->
+  </head>
+  <style>
+     *{
+      box-sizing: border-box;
+    }
+    body{
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    h2{
+      font-size: 1.80em;
+      color: #3173f6;
+      text-align: center;
+      margin-bottom:2em;
+    }
+    .div-dashboard{
+      /* background: #f6f6f6; */
+      display: grid;
+      width:370px;
+      height:700px;
+      border-radius:15px;
+      padding:1em;
+      justify-items: center;
+      margin: auto;/*centraliza a div*/
+      margin-top:4em;
+    }
+    a{
+      text-decoration: none;
+    }
+     .div-one-links a{
+      margin:1em;
+      border-radius:15px;
+      padding: 10px;
+      color:white;
+      background: #3173f6;
+    }
+    .tarefa{
+      margin-top: 2em;
+      width:300px;
+      display: grid;
+    }
+    h3{
+      font-size:20px;
+    }
+    h4{
+      font-weight: 100;
+      font-size:18px;
+    }
+    .tarefa span p {
+      margin-top:5px;
+      font-size:15px;
+      font-weight: 500;
+    }
+    .div-two-links{
+      margin-top:1em;
+    }
+    .div-two-links a{
+      padding:5px;
+      margin:4px;
+      color: #3173f6;
+      background: #a1bef749;
+      border-radius: 10px;
+    }
+  </style>
+<body>
+  <div class="div-dashboard">
+    <div class="div-one-links">
+      <h2>Olá, <%= nome %>!</h2>
+      <a href="/nova-tarefa">Nova Tarefa ✐</a>
+      <a href="/logout">↩︎ Sair</a>
+    </div>
+    <ul>
+      <% tarefas.forEach(t => { %>
+        <div class="tarefa">
+          <form action="/concluir/<%= t._id %>" method="GET" style="display: inline;">
+            <button type="submit">
+              <%= t.concluida ? '✅' : '⬜' %>
+            </button>
+          </form>
+    
+          <% if (t.concluida) { %>
+            <span style="text-decoration: line-through; color: gray;">
+          <% } else { %>
+            <span>
+          <% } %>
+    
+            <h3><strong><%= t.titulo %></strong></h3>
+            <h4><small><%= t.descricao %></small></h4>
+            <p>Prioridade: <%= t.prioridade %></p>
+            <p>Prazo: <%= new Date(t.prazo).toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' }) %></p>
+          </span>
+        <div class="div-two-links">
+          <a href="/editar/<%= t._id %>">Editar ✎</a>
+          <a href="/deletar/<%= t._id %>">Excluir</a>
+        </div>
+        </div>
+      <% }) %>
+    </ul>    
+  </div>
+</body>
+</html>
