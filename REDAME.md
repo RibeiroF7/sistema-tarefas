@@ -23,6 +23,3 @@ git clone https://github.com/RibeiroF7/sistema-tarefas.git
 cd sistema-tarefas
 npm install
 npm start
-git add README.md
-git commit -m "Adiciona README com instruções do projeto"
-git push
