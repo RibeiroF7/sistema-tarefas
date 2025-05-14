@@ -1,4 +1,4 @@
-# Sistema de Tarefas
+# Sistema Tarefas
 
 Um gerenciador de tarefas com:
 
@@ -19,7 +19,10 @@ Um gerenciador de tarefas com:
 ## Como rodar localmente
 
 ```bash
-git clone https://github.com/SEU_USUARIO/sistema-de-tarefas.git
-cd sistema-de-tarefas
+git clone https://github.com/RibeiroF7/sistema-tarefas.git
+cd sistema-tarefas
 npm install
 npm start
+git add README.md
+git commit -m "Adiciona README com instruções do projeto"
+git push
