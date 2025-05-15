@@ -1,1 +1,4 @@
-isso esta qui por causa do bug
+Se encontrou esse projeto...
+este projeto é apenas um teste de aprendizado,
+desconsidere qualquer erro de organização ou código.
+com o tempo irei melhorar e trazer projetos mais proficionais, obrigado!
