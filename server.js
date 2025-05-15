@@ -40,7 +40,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 
 // Rotas (iremos criar depois)
-import routes from './src/routes/index.js';
+import routes from './src/routes/router.js';
 app.use('/', routes);
 
 // Iniciar servidor
